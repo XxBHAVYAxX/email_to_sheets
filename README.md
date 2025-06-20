@@ -28,7 +28,7 @@ This is a simple Python script that reads your 10 most recent Gmail messages and
 
 ```bash
 pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
-
+```
 ---
 
 ## ⚙️ Setup Instructions
@@ -77,7 +77,7 @@ Edit these lines in `email_to_sheet.py` to set your target spreadsheet:
 ```python
 SPREADSHEET_ID = 'your-google-sheet-id-here'
 RANGE_NAME = 'Sheet1!A:E'
-
+```
 ---
 
 ## ⚠️ Notes
@@ -99,6 +99,5 @@ This project is licensed under the [MIT License](LICENSE).
 ## 🙋‍♂️ Author
 
 Made with 💻 by [Bhavya Kanojia](https://github.com/XxBHAVYAxX)
-
 
 
