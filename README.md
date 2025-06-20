@@ -1,93 +1,30 @@
-📧 Email to Google Sheets
-A Python script that reads the latest emails from your Gmail inbox and writes their details (Date, Sender, Subject, Snippet, Message ID) into a Google Sheet automatically.
+# 📧 Email to Google Sheets
 
-🔧 Features
-Fetches the 10 most recent emails from Gmail.
+This is a simple Python script that reads your 10 most recent Gmail messages and pushes the key details into a Google Sheet. It's useful for automating data entry or tracking email interactions.
 
-Extracts and cleans the body snippet (supports plain text and HTML).
+---
 
-Stores email metadata in a Google Sheet:
+## ✨ Features
 
-Date
+- Authenticates with Gmail and Google Sheets using OAuth 2.0.
+- Fetches the latest 10 emails from your Gmail inbox.
+- Extracts the following information:
+  - 📅 Date
+  - 📤 From
+  - 📝 Subject
+  - 📄 Body snippet (cleaned and trimmed)
+  - 🆔 Gmail Message ID
+- Appends the data into a Google Sheet (Sheet1!A:E).
 
-Sender
+---
 
-Subject
+## 📦 Requirements
 
-Body Snippet
+- Python 3.6 or higher
+- Gmail API enabled
+- Google Sheets API enabled
 
-Message ID
+### 📚 Install dependencies
 
-Handles authentication with Gmail and Sheets API via OAuth 2.0.
-
-📂 Project Structure
-bash
-Copy
-Edit
-email_to_sheets/
-├── email_to_sheet.py          # Main script
-├── credentials.json           # OAuth2 credentials from Google Cloud
-└── token.json                 # Auto-generated token after authentication
-🔌 Requirements
-Python 3.6+
-
-Google APIs:
-
-Gmail API (read-only)
-
-Google Sheets API
-
-Python Dependencies
-Install dependencies using pip:
-
-bash
-Copy
-Edit
+```bash
 pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
-📝 Setup Instructions
-Enable APIs:
-
-Go to the Google Cloud Console.
-
-Create a project and enable:
-
-Gmail API
-
-Google Sheets API
-
-Download Credentials:
-
-Navigate to "OAuth 2.0 Client IDs"
-
-Download the credentials.json file and place it in your project root.
-
-Set Spreadsheet Access:
-
-Share your Google Sheet with the email address listed in your token.json (after first run).
-
-Update the SPREADSHEET_ID in the script to match your target Sheet.
-
-Run the Script:
-
-bash
-Copy
-Edit
-python email_to_sheet.py
-You will be prompted to authorize access on the first run.
-
-📌 Notes
-Only the 10 most recent emails from the inbox are fetched.
-
-The body snippet is trimmed to 200 characters for readability.
-
-Repeated executions will append data to the sheet.
-
-📸 Sample Output (in Google Sheets)
-Date & Time	From	Subject	Body Snippet	Message ID
-2025-06-19 12:45:00	test@example.com	Welcome!	Thank you for signing...	17c2abc123d
-
-📄 License
-This project is open-source and available under the MIT License.
-
-🙋‍♂️ Author
-Made with 💻 by Bhavya Kanojia
